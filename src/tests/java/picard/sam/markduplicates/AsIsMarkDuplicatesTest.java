@@ -57,11 +57,11 @@ public class AsIsMarkDuplicatesTest {
     }
 
     @Test
-    public void testUnsortedInputWithAssumeSorted(){
+    public void testUnsortedInputWithAssumeSorted() {
         doAsIsTest(new File(TEST_DIR, "querynameGrouped.sam"), SAMFileHeader.SortOrder.queryname);
     }
 
-    private void doAsIsTest(final File input, final SAMFileHeader.SortOrder assumeSortOrder){
+    private void doAsIsTest(final File input, final SAMFileHeader.SortOrder assumeSortOrder) {
 
         final AbstractMarkDuplicatesCommandLineProgramTester tester = new BySumOfBaseQAndInOriginalOrderMDTester();
         final SamReader reader = SamReaderFactory.makeDefault().open(input);
@@ -81,6 +81,3 @@ public class AsIsMarkDuplicatesTest {
         tester.runTest();
     }
 }
-
-
-
